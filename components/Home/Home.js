@@ -3,13 +3,13 @@ import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'reac
 
 export default function Home() {
     const [meals, setMeals] = useState([]);
-
+    const [food, setFood] = useState('chicken');
     // Load meals data from themealdb.com
     useEffect(() => {
-        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=chicken`)
+        fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${food}`)
             .then(res => res.json())
             .then(data => setMeals(data.meals));
-    }, [])
+    }, [food])
 
     const handleMeal = (mealId) => {
         // handling meal here
@@ -27,21 +27,21 @@ export default function Home() {
 
             <View style={{ flexDirection: "row" }}>
                 <TouchableOpacity
-                    onPress={() => alert('Nearest To Me')}
+                    onPress={() => setFood('chocolate')}
                     style={styles.filterBtn}>
-                    <Text style={{ color: 'black' }}> Nearest To Me</Text>
+                    <Text style={{ color: 'black' }}> Chocolate</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => alert('Book a Table')}
+                    onPress={() => setFood('sandwich')}
                     style={styles.filterBtn}>
-                    <Text style={{ color: 'black' }}> Book a Table</Text>
+                    <Text style={{ color: 'black' }}> Sandwich</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity
-                    onPress={() => alert('Open Now')}
+                    onPress={() => setFood('cake')}
                     style={styles.filterBtn}>
-                    <Text style={{ color: 'black' }}> Open Now</Text>
+                    <Text style={{ color: 'black' }}> Cake</Text>
                 </TouchableOpacity>
             </View>
 
