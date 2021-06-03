@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import Home from './components/Home/Home';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Welcome to Mr. Food Application!</Text>
-    </View>
+    <ScrollView style={styles.container}>
+      <Home></Home>
+    </ScrollView>
   );
 }
 
@@ -13,7 +14,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
 });
