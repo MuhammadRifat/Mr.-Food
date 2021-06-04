@@ -3,7 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import Home from './components/Home/Home';
-import Restaurant from './components/Home/Restauarnt/Restaurant';
+import Restaurant from './components/Restaurant/Restaurant';
 
 const Stack = createStackNavigator();
 export default function App() {

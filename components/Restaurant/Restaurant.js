@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 
-const Restaurant = ({match}) => {
+const Restaurant = ({route}) => {
     const [meal , setMeal ] = useState({})
-    const {id} = match.params;
+    const {id} = route.params;
     useEffect(() =>{
         fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
         .then(response => response.json())
