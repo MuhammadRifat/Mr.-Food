@@ -1,20 +1,16 @@
 import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Home from './components/Home/Home';
+import { NativeRouter, Route, Link } from "react-router-native";
+import Restaurant from './components/Restaurant/Restaurant';
 
 export default function App() {
   return (
-    <ScrollView style={styles.container}>
-      <Home></Home>
-    </ScrollView>
+    <NativeRouter>
+      <Route exact path="/" component={Home} />
+      <Route path="/restaurant/:mealId" component={Restaurant} />
+    </NativeRouter>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 10,
-    marginTop:30
-  },
-});
+const styles = StyleSheet.create({});
