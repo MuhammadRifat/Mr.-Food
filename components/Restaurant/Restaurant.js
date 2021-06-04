@@ -24,14 +24,14 @@ export default function Restaurant({ match }) {
         }
         ingredients.push(meal[str]);
     }
-    
+
     // handling order button
     const handleOrder = () => {
         // handle order button here
     }
     return (
         <ScrollView style={styles.container}>
-            <Link to="/" underlayColor="white"><Text style={{fontSize:22, fontWeight:'bold'}}>{letArrow}</Text></Link>
+            <Link to="/" underlayColor="white"><Text style={{ fontSize: 22, fontWeight: 'bold' }}>{letArrow}</Text></Link>
 
             <View style={styles.mealComponent}>
                 <Image source={{ uri: `${meal.strMealThumb}` }} style={styles.mealImage} />
@@ -58,11 +58,12 @@ export default function Restaurant({ match }) {
                     }
                 </View>
 
-                <TouchableOpacity
-                    onPress={() => handleOrder()}
-                    style={styles.orderBtn}>
-                    <Text style={{ textAlign: 'center',color: 'white' }}>Order</Text>
-                </TouchableOpacity>
+                <Link to="/orderForm" underlayColor="white">
+                    <View
+                        style={styles.orderBtn}>
+                        <Text style={{ textAlign: 'center', color: 'white' }}>Order</Text>
+                    </View>
+                </Link>
             </View>
         </ScrollView>
     )
@@ -73,7 +74,7 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: '#fff',
         padding: 10,
-        marginTop: 30
+        marginTop: 20
     },
     mealComponent: {
         flex: 1,
